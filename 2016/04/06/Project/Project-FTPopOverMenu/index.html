@@ -5,32 +5,17 @@
     
     <title>FTPopOverMenu | LiuFengting</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="FTPopOverMenuA pop over menu which is maybe the easiest one to use.
-Installation- Manually
-clone this repo.
-Simply drop the ‘/FTPopOverMenu’ folder into your project.
-import ‘FTPopOverMenu.h’
-Enjoy！">
+    <meta name="description" content="FTPopOverMenuFTPopOverMenu is a pop over menu for iOS which is maybe the easiest one to use, supports both portrait and landscape. It can show from any UIView, any UIBarButtonItem and any CGRect. Simp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FTPopOverMenu">
 <meta property="og:url" content="http://liufengting.github.io/2016/04/06/Project/Project-FTPopOverMenu/index.html">
 <meta property="og:site_name" content="LiuFengting">
-<meta property="og:description" content="FTPopOverMenuA pop over menu which is maybe the easiest one to use.
-Installation- Manually
-clone this repo.
-Simply drop the ‘/FTPopOverMenu’ folder into your project.
-import ‘FTPopOverMenu.h’
-Enjoy！">
+<meta property="og:description" content="FTPopOverMenuFTPopOverMenu is a pop over menu for iOS which is maybe the easiest one to use, supports both portrait and landscape. It can show from any UIView, any UIBarButtonItem and any CGRect. Simp">
 <meta property="og:image" content="http://liufengting.github.io/hexo_theme_icarus/dark_1.jpg">
-<meta property="og:updated_time" content="2016-08-15T05:45:25.000Z">
+<meta property="og:updated_time" content="2016-11-08T02:21:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FTPopOverMenu">
-<meta name="twitter:description" content="FTPopOverMenuA pop over menu which is maybe the easiest one to use.
-Installation- Manually
-clone this repo.
-Simply drop the ‘/FTPopOverMenu’ folder into your project.
-import ‘FTPopOverMenu.h’
-Enjoy！">
+<meta name="twitter:description" content="FTPopOverMenuFTPopOverMenu is a pop over menu for iOS which is maybe the easiest one to use, supports both portrait and landscape. It can show from any UIView, any UIBarButtonItem and any CGRect. Simp">
 <meta name="twitter:image" content="http://liufengting.github.io/hexo_theme_icarus/dark_1.jpg">
     
 
@@ -103,7 +88,7 @@ ga('send', 'pageview');
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -122,10 +107,10 @@ ga('send', 'pageview');
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Entradas',
+            POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'Categorias',
-            TAGS: 'Etiquetas',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -156,7 +141,7 @@ ga('send', 'pageview');
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -176,16 +161,16 @@ ga('send', 'pageview');
             <h2 id="name">Liu Fengting</h2>
             <h3 id="title">iOS Developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>WuXi, China</span>
-            <a id="follow" target="_blank" href="https://github.com/liufengting/">SEGUIR</a>
+            <a id="follow" target="_blank" href="https://github.com/liufengting/">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 13
-                <span>Entradas</span>
+                <span>posts</span>
             </div>
             <div class="article-info-block">
                 3
-                <span>Etiquetas</span>
+                <span>tags</span>
             </div>
         </div>
         
@@ -260,7 +245,7 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="FTPopOverMenu"><a href="#FTPopOverMenu" class="headerlink" title="FTPopOverMenu"></a>FTPopOverMenu</h1><p>A pop over menu which is maybe the easiest one to use.</p>
+            <h1 id="FTPopOverMenu"><a href="#FTPopOverMenu" class="headerlink" title="FTPopOverMenu"></a>FTPopOverMenu</h1><p><code>FTPopOverMenu</code> is a pop over menu for <code>iOS</code> which is maybe the easiest one to use, supports both <code>portrait</code> and <code>landscape</code>. It can show from any <code>UIView</code>, any <code>UIBarButtonItem</code> and any <code>CGRect</code>. Simplest APIs, enable you to change the style in one line of code.</p>
 <h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><h2 id="Manually"><a href="#Manually" class="headerlink" title="- Manually"></a>- Manually</h2><ul>
 <li>clone this repo.</li>
 <li>Simply drop the ‘/FTPopOverMenu’ folder into your project.</li>
@@ -270,12 +255,17 @@ ga('send', 'pageview');
 <h2 id="Cocoapods"><a href="#Cocoapods" class="headerlink" title="- Cocoapods"></a>- Cocoapods</h2><p>FTPopOverMenu is available through <a href="http://cocoapods.org" target="_blank" rel="external">CocoaPods</a>. To install it, simply add the following line to your Podfile:</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod <span class="string">"FTPopOverMenu"</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="Useage"><a href="#Useage" class="headerlink" title="Useage"></a>Useage</h2><h3 id="setTintColor"><a href="#setTintColor" class="headerlink" title="setTintColor"></a>setTintColor</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu setTintColor:[UIColor redColor]];</div></pre></td></tr></table></figure>
-<h3 id="From-SenderView-Menu-Without-Images"><a href="#From-SenderView-Menu-Without-Images" class="headerlink" title="From SenderView, Menu Without Images"></a>From SenderView, Menu Without Images</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu showForSender:sender</div><div class="line">                    withMenu:@[@&quot;MenuOne&quot;,@&quot;MenuTwo&quot;,@&quot;MenuThr&quot;]</div><div class="line">                   doneBlock:^(NSInteger selectedIndex) &#123;</div><div class="line">                       </div><div class="line">                   &#125; dismissBlock:^&#123;</div><div class="line">                      </div><div class="line">                   &#125;];</div></pre></td></tr></table></figure>
-<h3 id="From-SenderView-Menu-With-Images"><a href="#From-SenderView-Menu-With-Images" class="headerlink" title="From SenderView, Menu With Images"></a>From SenderView, Menu With Images</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu showForSender:sender</div><div class="line">                    withMenu:@[@&quot;MenuOne&quot;,@&quot;MenuTwo&quot;,@&quot;MenuThr&quot;]</div><div class="line">              imageNameArray:@[@&quot;setting_icon&quot;,@&quot;setting_icon&quot;,@&quot;setting_icon&quot;]</div><div class="line">                   doneBlock:^(NSInteger selectedIndex) &#123;</div><div class="line">                       </div><div class="line">                   &#125; dismissBlock:^&#123;</div><div class="line">                      </div><div class="line">                   &#125;];</div></pre></td></tr></table></figure>
-<h3 id="From-SenderFrame-NavigationItem-Menu-Without-Images"><a href="#From-SenderFrame-NavigationItem-Menu-Without-Images" class="headerlink" title="From SenderFrame/NavigationItem, Menu Without Images"></a>From SenderFrame/NavigationItem, Menu Without Images</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu showFromSenderFrame:CGRectMake(self.view.frame.size.width - 40, 20, 40, 40)</div><div class="line">                          withMenu:@[@&quot;123&quot;,@&quot;234&quot;,@&quot;345&quot;]</div><div class="line">                         doneBlock:^(NSInteger selectedIndex) &#123;</div><div class="line">                             </div><div class="line">                         &#125; dismissBlock:^&#123;</div><div class="line">                             </div><div class="line">                         &#125;];</div></pre></td></tr></table></figure>
-<h3 id="From-SenderFrame-NavigationItem-Menu-With-Images"><a href="#From-SenderFrame-NavigationItem-Menu-With-Images" class="headerlink" title="From SenderFrame/NavigationItem, Menu With Images"></a>From SenderFrame/NavigationItem, Menu With Images</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu showFromSenderFrame:CGRectMake(self.view.frame.size.width - 40, 20, 40, 40)</div><div class="line">                          withMenu:@[@&quot;123&quot;,@&quot;234&quot;,@&quot;345&quot;]</div><div class="line">                    imageNameArray:@[@&quot;setting_icon&quot;,@&quot;setting_icon&quot;,@&quot;setting_icon&quot;]</div><div class="line">                         doneBlock:^(NSInteger selectedIndex) &#123;</div><div class="line">                             </div><div class="line">                         &#125; dismissBlock:^&#123;</div><div class="line">                             </div><div class="line">                         &#125;];</div></pre></td></tr></table></figure>
-<h3 id="From-barButtonItems"><a href="#From-barButtonItems" class="headerlink" title="From barButtonItems"></a>From barButtonItems</h3><ul>
+<p><a href="http://twitter.com/liufengting" target="_blank" rel="external"><img src="https://img.shields.io/badge/twitter-@liufengting-blue.svg?style=flat" alt="Twitter"></a><br><a href="https://raw.githubusercontent.com/liufengting/FTPopOverMenu/master/LICENSE" target="_blank" rel="external"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a><br><a href="http://cocoapods.org/pods/FTPopOverMenu" target="_blank" rel="external"><img src="https://img.shields.io/cocoapods/v/FTPopOverMenu.svg?style=flat" alt="Version"></a><br><a href="https://codebeat.co/projects/github-com-liufengting-ftpopovermenu" target="_blank" rel="external"><img src="https://codebeat.co/badges/763991fb-8307-4683-8b19-6c8aba9f1683" alt="Codebeat badge"></a><br><a href="http://cocoapods.org/pods/FTPopOverMenu" target="_blank" rel="external"><img src="https://img.shields.io/cocoapods/dt/FTPopOverMenu.svg?maxAge=2592000" alt="Download"></a><br><a href="http://cocoapods.org/pods/FTPopOverMenu" target="_blank" rel="external"><img src="https://img.shields.io/cocoapods/at/FTPopOverMenu.svg?maxAge=2592000" alt="CocoaPods"></a><br><a href="http://cocoapods.org/pods/FTPopOverMenu" target="_blank" rel="external"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/FTPopOverMenu.svg?maxAge=2592000" alt="CocoaPods"></a><br><a href="https://travis-ci.org/liufengting/FTPopOverMenu" target="_blank" rel="external"><img src="http://img.shields.io/travis/liufengting/FTPopOverMenu.svg?style=flat" alt="CI Status"></a><br><a href="https://github.com/liufengting/FTPopOverMenu/stargazers" target="_blank" rel="external"><img src="https://img.shields.io/github/stars/liufengting/FTPopOverMenu.svg" alt="GitHub stars"></a><br><a href="https://gitter.im/liufengting/FTPopOverMenu?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge" target="_blank" rel="external"><img src="https://badges.gitter.im/liufengting/FTPopOverMenu.svg" alt="Gitter"></a></p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h2 id="Customize"><a href="#Customize" class="headerlink" title="Customize"></a>Customize</h2><p>Do any of the following settings to set the style (Only set the ones you want to change), maybe do this when app starts or when you want it to show a different style, but remember it’s global change.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">FTPopOverMenuConfiguration *configuration = [FTPopOverMenuConfiguration defaultConfiguration];</div><div class="line">configuration.menuRowHeight = ...</div><div class="line">configuration.menuWidth = ...</div><div class="line">configuration.textColor = ...</div><div class="line">configuration.textFont = ...</div><div class="line">configuration.tintColor = ...</div><div class="line">configuration.borderColor = ...</div><div class="line">configuration.borderWidth = ...</div><div class="line">configuration.textAlignment = ...</div><div class="line">configuration.ignoreImageOriginalColor = ...;// set &apos;ignoreImageOriginalColor&apos; to YES, images color will be same as textColor</div></pre></td></tr></table></figure>
+<h2 id="setTintColor-default-is-gray-color-deprecated-after-1-2-0"><a href="#setTintColor-default-is-gray-color-deprecated-after-1-2-0" class="headerlink" title="setTintColor, default is gray color. deprecated after 1.2.0"></a><del>setTintColor, default is gray color.</del> deprecated after 1.2.0</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu setTintColor:[UIColor redColor]];</div></pre></td></tr></table></figure>
+<h2 id="setTextColor-default-is-white-color-deprecated-after-1-2-0"><a href="#setTextColor-default-is-white-color-deprecated-after-1-2-0" class="headerlink" title="setTextColor, default is white color. deprecated after 1.2.0"></a><del>setTextColor, default is white color.</del> deprecated after 1.2.0</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu setTextColor:[UIColor blackColor]];</div></pre></td></tr></table></figure>
+<h2 id="setPreferedWidth-default-is-120-should-not-be-less-than-50-deprecated-after-1-2-0"><a href="#setPreferedWidth-default-is-120-should-not-be-less-than-50-deprecated-after-1-2-0" class="headerlink" title="setPreferedWidth, default is 120, should not be less than 50. deprecated after 1.2.0"></a><del>setPreferedWidth, default is 120, should not be less than 50.</del> deprecated after 1.2.0</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu setPreferedWidth:200];</div></pre></td></tr></table></figure>
+<h2 id="From-SenderView-Menu-Without-Images"><a href="#From-SenderView-Menu-Without-Images" class="headerlink" title="From SenderView, Menu Without Images."></a>From SenderView, Menu Without Images.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu showForSender:sender</div><div class="line">                    withMenu:@[@&quot;MenuOne&quot;,@&quot;MenuTwo&quot;,@&quot;MenuThr&quot;]</div><div class="line">                   doneBlock:^(NSInteger selectedIndex) &#123;</div><div class="line">                       </div><div class="line">                   &#125; dismissBlock:^&#123;</div><div class="line">                      </div><div class="line">                   &#125;];</div></pre></td></tr></table></figure>
+<h2 id="From-SenderView-Menu-With-Images"><a href="#From-SenderView-Menu-With-Images" class="headerlink" title="From SenderView, Menu With Images."></a>From SenderView, Menu With Images.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu showForSender:sender</div><div class="line">                    withMenu:@[@&quot;MenuOne&quot;,@&quot;MenuTwo&quot;,@&quot;MenuThr&quot;]</div><div class="line">              imageNameArray:@[@&quot;setting_icon&quot;,@&quot;setting_icon&quot;,@&quot;setting_icon&quot;]</div><div class="line">                   doneBlock:^(NSInteger selectedIndex) &#123;</div><div class="line">                       </div><div class="line">                   &#125; dismissBlock:^&#123;</div><div class="line">                      </div><div class="line">                   &#125;];</div></pre></td></tr></table></figure>
+<h2 id="From-SenderFrame-NavigationItem-Menu-Without-Images"><a href="#From-SenderFrame-NavigationItem-Menu-Without-Images" class="headerlink" title="From SenderFrame/NavigationItem, Menu Without Images."></a>From SenderFrame/NavigationItem, Menu Without Images.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu showFromSenderFrame:CGRectMake(self.view.frame.size.width - 40, 20, 40, 40)</div><div class="line">                          withMenu:@[@&quot;123&quot;,@&quot;234&quot;,@&quot;345&quot;]</div><div class="line">                         doneBlock:^(NSInteger selectedIndex) &#123;</div><div class="line">                             </div><div class="line">                         &#125; dismissBlock:^&#123;</div><div class="line">                             </div><div class="line">                         &#125;];</div></pre></td></tr></table></figure>
+<h2 id="From-SenderFrame-NavigationItem-Menu-With-Images"><a href="#From-SenderFrame-NavigationItem-Menu-With-Images" class="headerlink" title="From SenderFrame/NavigationItem, Menu With Images."></a>From SenderFrame/NavigationItem, Menu With Images.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[FTPopOverMenu showFromSenderFrame:CGRectMake(self.view.frame.size.width - 40, 20, 40, 40)</div><div class="line">                          withMenu:@[@&quot;123&quot;,@&quot;234&quot;,@&quot;345&quot;]</div><div class="line">                    imageNameArray:@[@&quot;setting_icon&quot;,@&quot;setting_icon&quot;,@&quot;setting_icon&quot;]</div><div class="line">                         doneBlock:^(NSInteger selectedIndex) &#123;</div><div class="line">                             </div><div class="line">                         &#125; dismissBlock:^&#123;</div><div class="line">                             </div><div class="line">                         &#125;];</div></pre></td></tr></table></figure>
+<h2 id="From-barButtonItems"><a href="#From-barButtonItems" class="headerlink" title="From barButtonItems ."></a>From barButtonItems .</h2><ul>
 <li>First: add action with event to you barButtonItems </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@&quot;Edit&quot; style:UIBarButtonItemStyleDone target:self action:@selector(onNavButtonTapped:event:)]];</div></pre></td></tr></table></figure>
@@ -283,9 +273,15 @@ ga('send', 'pageview');
 <li>Second: implement the action</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">-(void)onNavButtonTapped:(UIBarButtonItem *)sender event:(UIEvent *)event</div><div class="line">&#123;</div><div class="line"></div><div class="line">    [FTPopOverMenu showFromEvent:event</div><div class="line">                        withMenu:@[@&quot;123&quot;,@&quot;234&quot;,@&quot;345&quot;]</div><div class="line">                  imageNameArray:@[@&quot;setting_icon&quot;,@&quot;setting_icon&quot;,@&quot;setting_icon&quot;]</div><div class="line">                       doneBlock:^(NSInteger selectedIndex) &#123;</div><div class="line">                           </div><div class="line">                       &#125; dismissBlock:^&#123;</div><div class="line">                           </div><div class="line">                       &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="CHANGELOG"><a href="#CHANGELOG" class="headerlink" title="CHANGELOG"></a>CHANGELOG</h1><p><a href="https://github.com/liufengting/FTPopOverMenu/blob/master/CHANGELOG.md" target="_blank" rel="external">CHANGELOG</a></p>
 <h1 id="ScreenShots"><a href="#ScreenShots" class="headerlink" title="ScreenShots"></a>ScreenShots</h1><p><img src="https://raw.githubusercontent.com/liufengting/FTPopOverMenu/master/ScreenShots/Demo.gif" width="250"></p>
-<h1 id="More"><a href="#More" class="headerlink" title="More"></a>More</h1><p> Look for another way of doing this? <a href="https://github.com/liufengting/FTPopMenu" target="_blank" rel="external">See Here</a></p>
-<h1 id="License"><a href="#License" class="headerlink" title="License"></a>License</h1><p>FTPopOverMenu is available under the MIT license. See the LICENSE file for more info.</p>
+<h1 id="More"><a href="#More" class="headerlink" title="More"></a>More</h1><ul>
+<li>Images in the demo from <a href="https://www.iconfinder.com/iconsets/pokemon-go" target="_blank" rel="external">https://www.iconfinder.com/iconsets/pokemon-go</a>.</li>
+<li>If you like it, or maybe wanna use it in your own projects, please give me a <code>star</code>.</li>
+<li>Looking for another way of doing this? Take a look at my another <a href="https://github.com/liufengting/FTPopMenu" target="_blank" rel="external">FTPopMenu at here</a>.  It was another way of showing pop over menus, which is wrapped from <code>UIPopoverViewController</code>, and more genetic and more good-looking. Feel free to try it.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/liufengting/FTPopMenu/master/ScreenShots/ScreenShots2.png" width="400"></p>
+<h1 id="License"><a href="#License" class="headerlink" title="License"></a>License</h1><p><code>FTPopOverMenu</code> is available under the <code>MIT</code> license. See the <code>LICENSE</code> file for more info.</p>
 <h1 id="Project-Repo"><a href="#Project-Repo" class="headerlink" title="Project Repo"></a>Project Repo</h1><p>See More Here: <a href="https://github.com/liufengting/FTPopOverMenu" target="_blank" rel="external">FTPopOverMenu</a></p>
 
         
@@ -297,7 +293,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://liufengting.github.io/2016/04/06/Project/Project-FTPopOverMenu/" data-id="citwxezx400093acaunk59y0d" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="http://liufengting.github.io/2016/04/06/Project/Project-FTPopOverMenu/" data-id="citwxezx400093acaunk59y0d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -365,7 +361,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://liufengting.github.io/2016/04/06/Project/Project-FTPopOverMenu/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://liufengting.github.io/2016/04/06/Project/Project-FTPopOverMenu/">Comentarios</a>
+        <a href="http://liufengting.github.io/2016/04/06/Project/Project-FTPopOverMenu/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://liufengting.github.io/2016/04/06/Project/Project-FTPopOverMenu/">Comments</a>
     
 
         </footer>
@@ -375,7 +371,7 @@ ga('send', 'pageview');
 <nav id="article-nav">
     
         <a href="/2016/07/11/Resource/2016-07-11-Git-Methods/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Más nuevo</strong>
+            <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
                     Git Methods
@@ -385,7 +381,7 @@ ga('send', 'pageview');
     
     
         <a href="/2016/04/06/Project/Project-FTImageViewer/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Más viejo</strong>
+            <strong class="article-nav-caption">Older</strong>
             <div class="article-nav-title">FTImageViewer</div>
         </a>
     
@@ -413,7 +409,7 @@ ga('send', 'pageview');
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Recientes</h3>
+        <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
@@ -519,7 +515,7 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Categorias</h3>
+        <h3 class="widget-title">categories</h3>
         <div class="widget">
             <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Resource/">Resource</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a><span class="category-list-count">1</span></li></ul>
         </div>
@@ -528,7 +524,7 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Archivos</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">6</span></li></ul>
         </div>
@@ -537,7 +533,7 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Etiquetas</h3>
+        <h3 class="widget-title">tags</h3>
         <div class="widget">
             <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Project/">Project</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Resource/">Resource</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thoughts/">Thoughts</a><span class="tag-list-count">1</span></li></ul>
         </div>
@@ -546,7 +542,7 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Nube de etiquetas</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
             <a href="/tags/Project/" style="font-size: 15px;">Project</a> <a href="/tags/Resource/" style="font-size: 20px;">Resource</a> <a href="/tags/Thoughts/" style="font-size: 10px;">Thoughts</a>
         </div>
@@ -555,7 +551,7 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">Links</h3>
+        <h3 class="widget-title">links</h3>
         <div class="widget">
             <ul>
                 
