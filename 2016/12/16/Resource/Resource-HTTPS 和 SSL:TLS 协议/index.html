@@ -20,7 +20,7 @@
 要说清楚 HTTPS 协议的实现原理，至少需要如下几个背景知识。大致了解几个基本术语（HTTPS、SSL、TLS）的含义。大致了解 HTTP 和 TCP 的关系（尤其是“短连接”VS“长连接”）。大致了解加密算法的概念（尤其是“对称加密与非对称加密”的区别）。大致了解 CA 证书的用途。
 考虑到很多技术菜鸟可能不了解上述背景，俺先用最简短的文字">
 <meta property="og:image" content="http://liufengting.github.io/hexo_theme_icarus/dark.jpg">
-<meta property="og:updated_time" content="2016-12-16T10:00:44.000Z">
+<meta property="og:updated_time" content="2016-12-16T10:32:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTPS 和 SSL/TLS 协议">
 <meta name="twitter:description" content="HTTPS 和 SSL/TLS 协议
@@ -264,7 +264,6 @@ ga('send', 'pageview');
 <p>考虑到很多技术菜鸟可能不了解上述背景，俺先用最简短的文字描述一下。如果你自认为不是菜鸟，请略过本章节，直接去看“HTTPS 协议的需求”。</p>
 <a id="more"></a>
 <h2 id="澄清几个术语——HTTPS、SSL、TLS"><a href="#澄清几个术语——HTTPS、SSL、TLS" class="headerlink" title="澄清几个术语——HTTPS、SSL、TLS"></a>澄清几个术语——HTTPS、SSL、TLS</h2><h3 id="1、“HTTP”是干嘛用滴？"><a href="#1、“HTTP”是干嘛用滴？" class="headerlink" title="1、“HTTP”是干嘛用滴？"></a>1、“HTTP”是干嘛用滴？</h3><p>首先，HTTP 是一个网络协议，是专门用来帮你传输 Web 内容滴。关于这个协议，就算你不了解，至少也听说过吧？</p>
-<p>比如你访问俺的博客的主页，浏览器地址栏会出现网址：<a href="http://program-think.blogspot.com/" target="_blank" rel="external">http://program-think.blogspot.com/</a> 。</p>
 <p>俺加了粗体的部分就是指 HTTP 协议。大部分网站都是通过 HTTP 协议来传输 Web 页面、以及 Web 页面上包含的各种东东（图片、CSS 样式、JS 脚本）。</p>
 <h3 id="2、“SSL-TLS”是干嘛用滴？"><a href="#2、“SSL-TLS”是干嘛用滴？" class="headerlink" title="2、“SSL/TLS”是干嘛用滴？"></a>2、“SSL/TLS”是干嘛用滴？</h3><p>SSL 是洋文“Secure Sockets Layer”的缩写，中文叫做“安全套接层”。它是在上世纪90年代中期，由网景公司设计的。（顺便插一句，网景公司不光发明了 SSL，还发明了很多 Web 的基础设施——比如“CSS 样式表”和“JS 脚本”）</p>
 <p>为啥要发明 SSL 这个协议捏？因为原先互联网上使用的 HTTP 协议是明文的，存在很多缺点——比如传输内容会被偷窥（嗅探）和篡改。发明 SSL 协议，就是为了解决这些问题。</p>
