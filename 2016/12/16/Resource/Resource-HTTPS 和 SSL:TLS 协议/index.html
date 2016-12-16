@@ -20,7 +20,7 @@
 要说清楚 HTTPS 协议的实现原理，至少需要如下几个背景知识。大致了解几个基本术语（HTTPS、SSL、TLS）的含义。大致了解 HTTP 和 TCP 的关系（尤其是“短连接”VS“长连接”）。大致了解加密算法的概念（尤其是“对称加密与非对称加密”的区别）。大致了解 CA 证书的用途。
 考虑到很多技术菜鸟可能不了解上述背景，俺先用最简短的文字">
 <meta property="og:image" content="http://liufengting.github.io/hexo_theme_icarus/dark.jpg">
-<meta property="og:updated_time" content="2016-12-16T05:14:42.000Z">
+<meta property="og:updated_time" content="2016-12-16T10:00:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTPS 和 SSL/TLS 协议">
 <meta name="twitter:description" content="HTTPS 和 SSL/TLS 协议
@@ -275,7 +275,6 @@ ga('send', 'pageview');
 <h2 id="再来说说-HTTP-协议的特点"><a href="#再来说说-HTTP-协议的特点" class="headerlink" title="再来说说 HTTP 协议的特点"></a>再来说说 HTTP 协议的特点</h2><p>作为背景知识介绍，还需要再稍微谈一下 HTTP 协议本身的特点。HTTP 本身有很多特点，考虑到篇幅有限，俺只谈那些和 HTTPS 相关的特点。</p>
 <h3 id="1、HTTP-的版本和历史"><a href="#1、HTTP-的版本和历史" class="headerlink" title="1、HTTP 的版本和历史"></a>1、HTTP 的版本和历史</h3><p>如今咱们用的 HTTP 协议，版本号是 1.1（也就是 HTTP 1.1）。这个 1.1 版本是1995年底开始起草的（技术文档是 RFC2068），并在1999年正式发布（技术文档是 RFC2616）。</p>
 <p>在 1.1 之前，还有曾经出现过两个版本“0.9 和 1.0”，其中的 HTTP 0.9 【没有】被广泛使用，而 HTTP 1.0 被广泛使用过。</p>
-<p>另外，据说明年（2015）IETF 就要发布 HTTP 2.0 的标准了。俺拭目以待。</p>
 <h3 id="2、HTTP-和-TCP-之间的关系"><a href="#2、HTTP-和-TCP-之间的关系" class="headerlink" title="2、HTTP 和 TCP 之间的关系"></a>2、HTTP 和 TCP 之间的关系</h3><p>简单地说，TCP 协议是 HTTP 协议的基石——HTTP 协议需要依靠 TCP 协议来传输数据。</p>
 <p>在网络分层模型中，TCP 被称为“传输层协议”，而 HTTP 被称为“应用层协议”。</p>
 <p>有很多常见的应用层协议是以 TCP 为基础的，比如“FTP、SMTP、POP、IMAP”等。</p>
