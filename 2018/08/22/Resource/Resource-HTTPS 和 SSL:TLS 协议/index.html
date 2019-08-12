@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="En">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>HTTPS 和 SSL/TLS 协议 - LiuFengting</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="HTTPS 和 SSL/TLS 协议 相关背景知识  要说清楚 HTTPS 协议的实现原理，至少需要如下几个背景知识。大致了解几个基本术语（HTTPS、SSL、TLS）的含义。大致了解 HTTP 和 TCP 的关系（尤其是“短连接”VS“长连接”）。大致了解加密算法的概念（尤其是“对称加密与非对称加密”的区别）。大致了解 CA 证书的用途。 考虑到很多技术菜鸟可能不了解上述背景，俺先用最简短的文字">
+<meta name="keywords" content="Resource">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTPS 和 SSL&#x2F;TLS 协议">
+<meta property="og:url" content="http://liufengting.github.io/2018/08/22/Resource/Resource-HTTPS 和 SSL:TLS 协议/index.html">
+<meta property="og:site_name" content="LiuFengting">
+<meta property="og:description" content="HTTPS 和 SSL/TLS 协议 相关背景知识  要说清楚 HTTPS 协议的实现原理，至少需要如下几个背景知识。大致了解几个基本术语（HTTPS、SSL、TLS）的含义。大致了解 HTTP 和 TCP 的关系（尤其是“短连接”VS“长连接”）。大致了解加密算法的概念（尤其是“对称加密与非对称加密”的区别）。大致了解 CA 证书的用途。 考虑到很多技术菜鸟可能不了解上述背景，俺先用最简短的文字">
+<meta property="og:locale" content="En">
+<meta property="og:image" content="http://liufengting.github.io/gallery/bg_bridge.jpg">
+<meta property="og:updated_time" content="2019-08-12T08:24:13.875Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTPS 和 SSL&#x2F;TLS 协议">
+<meta name="twitter:description" content="HTTPS 和 SSL/TLS 协议 相关背景知识  要说清楚 HTTPS 协议的实现原理，至少需要如下几个背景知识。大致了解几个基本术语（HTTPS、SSL、TLS）的含义。大致了解 HTTP 和 TCP 的关系（尤其是“短连接”VS“长连接”）。大致了解加密算法的概念（尤其是“对称加密与非对称加密”的区别）。大致了解 CA 证书的用途。 考虑到很多技术菜鸟可能不了解上述背景，俺先用最简短的文字">
+<meta name="twitter:image" content="http://liufengting.github.io/gallery/bg_bridge.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="HTTPS 和 SSL/TLS 协议" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/liufengting">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="HTTPS 和 SSL/TLS 协议">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-08-22T09:01:32.405Z">2018-08-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    30 minutes read (About 4528 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                HTTPS 和 SSL/TLS 协议
+            
+        </h1>
+        <div class="content">
+            <h1 id="HTTPS-和-SSL-TLS-协议"><a href="#HTTPS-和-SSL-TLS-协议" class="headerlink" title="HTTPS 和 SSL/TLS 协议"></a>HTTPS 和 SSL/TLS 协议</h1><blockquote>
+<p>相关背景知识</p>
+</blockquote>
+<p>要说清楚 HTTPS 协议的实现原理，至少需要如下几个背景知识。<br>大致了解几个基本术语（HTTPS、SSL、TLS）的含义。<br>大致了解 HTTP 和 TCP 的关系（尤其是“短连接”VS“长连接”）。<br>大致了解加密算法的概念（尤其是“对称加密与非对称加密”的区别）。<br>大致了解 CA 证书的用途。</p>
+<p>考虑到很多技术菜鸟可能不了解上述背景，俺先用最简短的文字描述一下。如果你自认为不是菜鸟，请略过本章节，直接去看“HTTPS 协议的需求”。</p>
+<a id="more"></a>
+
+<h2 id="澄清几个术语——HTTPS、SSL、TLS"><a href="#澄清几个术语——HTTPS、SSL、TLS" class="headerlink" title="澄清几个术语——HTTPS、SSL、TLS"></a>澄清几个术语——HTTPS、SSL、TLS</h2><h3 id="1、“HTTP”是干嘛用滴？"><a href="#1、“HTTP”是干嘛用滴？" class="headerlink" title="1、“HTTP”是干嘛用滴？"></a>1、“HTTP”是干嘛用滴？</h3><p>首先，HTTP 是一个网络协议，是专门用来帮你传输 Web 内容滴。关于这个协议，就算你不了解，至少也听说过吧？</p>
+<p>俺加了粗体的部分就是指 HTTP 协议。大部分网站都是通过 HTTP 协议来传输 Web 页面、以及 Web 页面上包含的各种东东（图片、CSS 样式、JS 脚本）。</p>
+<h3 id="2、“SSL-TLS”是干嘛用滴？"><a href="#2、“SSL-TLS”是干嘛用滴？" class="headerlink" title="2、“SSL/TLS”是干嘛用滴？"></a>2、“SSL/TLS”是干嘛用滴？</h3><p>SSL 是洋文“Secure Sockets Layer”的缩写，中文叫做“安全套接层”。它是在上世纪90年代中期，由网景公司设计的。（顺便插一句，网景公司不光发明了 SSL，还发明了很多 Web 的基础设施——比如“CSS 样式表”和“JS 脚本”）</p>
+<p>为啥要发明 SSL 这个协议捏？因为原先互联网上使用的 HTTP 协议是明文的，存在很多缺点——比如传输内容会被偷窥（嗅探）和篡改。发明 SSL 协议，就是为了解决这些问题。</p>
+<p>到了1999年，SSL 因为应用广泛，已经成为互联网上的事实标准。IETF 就在那年把 SSL 标准化。标准化之后的名称改为 TLS（是“Transport Layer Security”的缩写），中文叫做“传输层安全协议”。</p>
+<p>很多相关的文章都把这两者并列称呼（SSL/TLS），因为这两者可以视作同一个东西的不同阶段。</p>
+<h3 id="3、“HTTPS”是啥意思？"><a href="#3、“HTTPS”是啥意思？" class="headerlink" title="3、“HTTPS”是啥意思？"></a>3、“HTTPS”是啥意思？</h3><p>解释完 HTTP 和 SSL/TLS，现在就可以来解释 HTTPS 啦。咱们通常所说的 HTTPS 协议，说白了就是“HTTP 协议”和“SSL/TLS 协议”的组合。</p>
+<p>你可以把 HTTPS 大致理解为——“HTTP over SSL”或“HTTP over TLS”（反正 SSL 和 TLS 差不多）。</p>
+<h2 id="再来说说-HTTP-协议的特点"><a href="#再来说说-HTTP-协议的特点" class="headerlink" title="再来说说 HTTP 协议的特点"></a>再来说说 HTTP 协议的特点</h2><p>作为背景知识介绍，还需要再稍微谈一下 HTTP 协议本身的特点。HTTP 本身有很多特点，考虑到篇幅有限，俺只谈那些和 HTTPS 相关的特点。</p>
+<h3 id="1、HTTP-的版本和历史"><a href="#1、HTTP-的版本和历史" class="headerlink" title="1、HTTP 的版本和历史"></a>1、HTTP 的版本和历史</h3><p>如今咱们用的 HTTP 协议，版本号是 1.1（也就是 HTTP 1.1）。这个 1.1 版本是1995年底开始起草的（技术文档是 RFC2068），并在1999年正式发布（技术文档是 RFC2616）。</p>
+<p>在 1.1 之前，还有曾经出现过两个版本“0.9 和 1.0”，其中的 HTTP 0.9 【没有】被广泛使用，而 HTTP 1.0 被广泛使用过。</p>
+<h3 id="2、HTTP-和-TCP-之间的关系"><a href="#2、HTTP-和-TCP-之间的关系" class="headerlink" title="2、HTTP 和 TCP 之间的关系"></a>2、HTTP 和 TCP 之间的关系</h3><p>简单地说，TCP 协议是 HTTP 协议的基石——HTTP 协议需要依靠 TCP 协议来传输数据。</p>
+<p>在网络分层模型中，TCP 被称为“传输层协议”，而 HTTP 被称为“应用层协议”。</p>
+<p>有很多常见的应用层协议是以 TCP 为基础的，比如“FTP、SMTP、POP、IMAP”等。</p>
+<p>TCP 被称为“面向连接”的传输层协议。关于它的具体细节，俺就不展开了（否则篇幅又失控了）。你只需知道：传输层主要有两个协议，分别是 TCP 和 UDP。TCP 比 UDP 更可靠。你可以把 TCP 协议想象成某个水管，发送端这头进水，接收端那头就出水。并且 TCP 协议能够确保，先发送的数据先到达（与之相反，UDP 不保证这点）。</p>
+<h3 id="3、HTTP-协议如何使用-TCP-连接？"><a href="#3、HTTP-协议如何使用-TCP-连接？" class="headerlink" title="3、HTTP 协议如何使用 TCP 连接？"></a>3、HTTP 协议如何使用 TCP 连接？</h3><p>HTTP 对 TCP 连接的使用，分为两种方式：俗称“短连接”和“长连接”（“长连接”又称“持久连接”，洋文叫做“Keep-Alive”或“Persistent Connection”）</p>
+<p>假设有一个网页，里面包含好多图片，还包含好多【外部的】CSS 文件和 JS 文件。</p>
+<p>在“短连接”的模式下，浏览器会先发起一个 TCP 连接，拿到该网页的 HTML 源代码（拿到 HTML 之后，这个 TCP 连接就关闭了）。然后，浏览器开始分析这个网页的源码，知道这个页面包含很多外部资源（图片、CSS、JS）。然后针对【每一个】外部资源，再分别发起一个个 TCP 连接，把这些文件获取到本地（同样的，每抓取一个外部资源后，相应的 TCP 就断开）</p>
+<p>相反，如果是“长连接”的方式，浏览器也会先发起一个 TCP 连接去抓取页面。但是抓取页面之后，该 TCP 连接并不会立即关闭，而是暂时先保持着（所谓的“Keep-Alive”）。然后浏览器分析 HTML 源码之后，发现有很多外部资源，就用刚才那个 TCP 连接去抓取此页面的外部资源。</p>
+<p>在 HTTP 1.0 版本，【默认】使用的是“短连接”（那时候是 Web 诞生初期，网页相对简单，“短连接”的问题不大）；</p>
+<p>到了1995年底开始制定 HTTP 1.1 草案的时候，网页已经开始变得复杂（网页内的图片、脚本越来越多了）。这时候再用短连接的方式，效率太低下了（因为建立 TCP 连接是有“时间成本”和“CPU 成本”滴）。所以，在 HTTP 1.1 中，【默认】采用的是“Keep-Alive”的方式。</p>
+<p>关于“Keep-Alive”的更多介绍，可以参见维基百科词条。</p>
+<h2 id="谈谈“对称加密”和“非对称加密”的概念"><a href="#谈谈“对称加密”和“非对称加密”的概念" class="headerlink" title="谈谈“对称加密”和“非对称加密”的概念"></a>谈谈“对称加密”和“非对称加密”的概念</h2><h3 id="1、啥是“加密”和“解密”？"><a href="#1、啥是“加密”和“解密”？" class="headerlink" title="1、啥是“加密”和“解密”？"></a>1、啥是“加密”和“解密”？</h3><p>通俗而言，你可以把“加密”和“解密”理解为某种【互逆的】数学运算。就好比“加法和减法”互为逆运算、“乘法和除法”互为逆运算。</p>
+<p>“加密”的过程，就是把“明文”变成“密文”的过程；反之，“解密”的过程，就是把“密文”变为“明文”。在这两个过程中，都需要一个关键的东东——叫做“密钥”——来参与数学运算。</p>
+<h3 id="2、啥是“对称加密”？"><a href="#2、啥是“对称加密”？" class="headerlink" title="2、啥是“对称加密”？"></a>2、啥是“对称加密”？</h3><p>所谓的“对称加密技术”，意思就是说：“加密”和“解密”使用【相同的】密钥。这个比较好理解。</p>
+<p>就好比你用 7zip 或 WinRAR 创建一个带密码（口令）的加密压缩包。当你下次要把这个压缩文件解开的时候，你需要输入【同样的】密码。在这个例子中，密码/口令就如同刚才说的“密钥”。</p>
+<h3 id="3、啥是“非对称加密”？"><a href="#3、啥是“非对称加密”？" class="headerlink" title="3、啥是“非对称加密”？"></a>3、啥是“非对称加密”？</h3><p>所谓的“非对称加密技术”，意思就是说：“加密”和“解密”使用【不同的】密钥。这玩意儿比较难理解，也比较难想到。当年“非对称加密”的发明，还被誉为“密码学”历史上的一次革命。</p>
+<p>由于篇幅有限，对“非对称加密”这个话题，俺就不展开了。有空的话，再单独写一篇扫盲。</p>
+<h3 id="4、各自有啥优缺点？"><a href="#4、各自有啥优缺点？" class="headerlink" title="4、各自有啥优缺点？"></a>4、各自有啥优缺点？</h3><p>看完刚才的定义，很显然：（从功能角度而言）“非对称加密”能干的事情比“对称加密”要多。这是“非对称加密”的优点。但是“非对称加密”的实现，通常需要涉及到“复杂数学问题”。所以，“非对称加密”的性能通常要差很多（相对于“对称加密”而言）。</p>
+<p>这两者的优缺点，也影响到了 SSL 协议的设计。</p>
+<blockquote>
+<p>CA 证书的原理及用途</p>
+</blockquote>
+<p>关于这方面，请看俺4年前写的《数字证书及CA的扫盲介绍》。这里就不再重复唠叨了，免得篇幅太长。</p>
+<p>HTTPS 协议的需求是啥？</p>
+<p>花了好多口水，终于把背景知识说完了。下面正式进入正题。先来说说当初设计 HTTPS 是为了满足哪些需求？</p>
+<p>很多介绍 HTTPS 的文章一上来就给你讲实现细节。个人觉得：这是不好的做法。</p>
+<p>早在2009年开博的时候，发过一篇《学习技术的三部曲：WHAT、HOW、WHY》，其中谈到“WHY 型问题”的重要性。一上来就给你讲协议细节，你充其量只能知道 WHAT 和 HOW，无法理解 WHY。</p>
+<p>俺在前一个章节讲了“背景知识”，在这个章节讲了“需求”，这就有助于你理解：当初为什么要设计成这样？——这就是 WHY 型的问题。</p>
+<blockquote>
+<p>兼容性</p>
+</blockquote>
+<p>因为是先有 HTTP 再有 HTTPS。所以，HTTPS 的设计者肯定要考虑到对原有 HTTP 的兼容性。</p>
+<p>这里所说的兼容性包括很多方面。比如已有的 Web 应用要尽可能无缝地迁移到 HTTPS；比如对浏览器厂商而言，改动要尽可能小；……</p>
+<p>基于“兼容性”方面的考虑，很容易得出如下几个结论：</p>
+<ul>
+<li>1、HTTPS 还是要基于 TCP 来传输</li>
+</ul>
+<p>（如果改为 UDP 作传输层，无论是 Web 服务端还是浏览器客户端，都要大改，动静太大了）</p>
+<ul>
+<li>2、单独使用一个新的协议，把 HTTP 协议包裹起来</li>
+</ul>
+<p>（所谓的“HTTP over SSL”，实际上是在原有的 HTTP 数据外面加了一层 SSL 的封装。HTTP 协议原有的 GET、POST 之类的机制，基本上原封不动）</p>
+<p>打个比方：如果原来的 HTTP 是塑料水管，容易被戳破；那么如今新设计的 HTTPS 就像是在原有的塑料水管之外，再包一层金属水管。一来，原有的塑料水管照样运行；二来，用金属加固了之后，不容易被戳破。</p>
+<blockquote>
+<p>可扩展性</p>
+</blockquote>
+<p>前面说了，HTTPS 相当于是“HTTP over SSL”。</p>
+<p>如果 SSL 这个协议在“可扩展性”方面的设计足够牛逼，那么它除了能跟 HTTP 搭配，还能够跟其它的应用层协议搭配。岂不美哉？</p>
+<p>现在看来，当初设计 SSL 的人确实比较牛。如今的 SSL/TLS 可以跟很多常用的应用层协议（比如：FTP、SMTP、POP、Telnet）搭配，来强化这些应用层协议的安全性。</p>
+<p>接着刚才打的比方：如果把 SSL/TLS 视作一根用来加固的金属管，它不仅可以用来加固输水的管道，还可以用来加固输煤气的管道。</p>
+<blockquote>
+<p>保密性（防泄密）</p>
+</blockquote>
+<p>HTTPS 需要做到足够好的保密性。</p>
+<p>说到保密性，首先要能够对抗嗅探（行话叫 Sniffer）。所谓的“嗅探”，通俗而言就是监视你的网络传输流量。如果你使用明文的 HTTP 上网，那么监视者通过嗅探，就知道你在访问哪些网站的哪些页面。</p>
+<p>嗅探是最低级的攻击手法。除了嗅探，HTTPS 还需要能对抗其它一些稍微高级的攻击手法——比如“重放攻击”（后面讲协议原理的时候，会再聊）。</p>
+<blockquote>
+<p>完整性（防篡改）</p>
+</blockquote>
+<p>除了“保密性”，还有一个同样重要的目标是“确保完整性”。关于“完整性”这个概念，在之前的博文《扫盲文件完整性校验——关于散列值和数字签名》中大致提过。健忘的同学再去温习一下。</p>
+<p>在发明 HTTPS 之前，由于 HTTP 是明文的，不但容易被嗅探，还容易被篡改。</p>
+<blockquote>
+<p>举个例子：</p>
+</blockquote>
+<p>比如咱们天朝的网络运营商（ISP）都比较流氓，经常有网友抱怨说访问某网站（本来是没有广告的），竟然会跳出很多中国电信的广告。为啥会这样捏？因为你的网络流量需要经过 ISP 的线路才能到达公网。如果你使用的是明文的 HTTP，ISP 很容易就可以在你访问的页面中植入广告。</p>
+<p>所以，当初设计 HTTPS 的时候，还有一个需求是“确保 HTTP 协议的内容不被篡改”。</p>
+<blockquote>
+<p>真实性（防假冒）</p>
+</blockquote>
+<p>在谈到 HTTPS 的需求时，“真实性”经常被忽略。其实“真实性”的重要程度不亚于前面的“保密性”和“完整性”。</p>
+<p>举个例子：</p>
+<p>你因为使用网银，需要访问该网银的 Web 站点。那么，你如何确保你访问的网站确实是你想访问的网站？（这话有点绕口令）</p>
+<p>有些天真的同学会说：通过看网址里面的域名，来确保。为啥说这样的同学是“天真的”？因为 DNS 系统本身是不可靠的（尤其是在设计 SSL 的那个年代，连 DNSSEC 都还没发明）。由于 DNS 的不可靠（存在“域名欺骗”和“域名劫持”），你看到的网址里面的域名【未必】是真实滴！</p>
+<p>所以，HTTPS 协议必须有某种机制来确保“真实性”的需求（至于如何确保，后面会细聊）。</p>
+<blockquote>
+<p>性能</p>
+</blockquote>
+<p>再来说最后一个需求——性能。</p>
+<p>引入 HTTPS 之后，【不能】导致性能变得太差。否则的话，谁还愿意用？</p>
+<p>为了确保性能，SSL 的设计者至少要考虑如下几点：</p>
+<p>如何选择加密算法（“对称”or“非对称”）？<br>如何兼顾 HTTP 采用的“短连接”TCP 方式？</p>
+<p>（SSL 是在1995年之前开始设计的，那时候的 HTTP 版本还是 1.0，默认使用的是“短连接”的 TCP 方式——默认不启用 Keep-Alive）</p>
+<blockquote>
+<p>小结</p>
+</blockquote>
+<p>以上就是设计 SSL 协议时，必须兼顾的各种需求。后面聊协议的实现时，俺会拿 SSL 协议的特点跟前面的需求作对照。看看这些需求是如何一一满足滴。</p>
+<h2 id="设计-HTTPS-协议的主要难点"><a href="#设计-HTTPS-协议的主要难点" class="headerlink" title="设计 HTTPS 协议的主要难点"></a>设计 HTTPS 协议的主要难点</h2><p>设计 HTTPS 这个协议，有好几个难点。俺个人认为最大的难点在于“密钥交换”。</p>
+<p>在传统的密码学场景中，假如张三要跟李四建立一个加密通讯的渠道，双方事先要约定好使用哪种加密算法？同时也要约定好使用的密钥是啥？在这个场景中，加密算法的【类型】让旁人知道，没太大关系。但是密钥【千万不能】让旁人知道。一旦旁人知道了密钥，自然就可以破解通讯的密文，得到明文。</p>
+<p>好，现在回到 HTTPS 的场景。</p>
+<p>当你访问某个公网的网站，你的浏览器和网站的服务器之间，如果要建立加密通讯，必然要商量好双方使用啥算法，啥密钥。——在网络通讯术语中，这个过程称之为“握手/handshake”。</p>
+<p>在握手阶段，因为加密方式还没有协商好，所以握手阶段的通讯必定是【明文】滴！既然是明文，自然有可能被第三方偷窥到。然后，还要考虑到双方之间隔着一个互联网，什么样的偷窥都可能发生。</p>
+<p>因此，在握手的过程中，如何做到安全地交换密钥信息，而不让周围的第三方看到。这就是设计 HTTPS 最大的难点。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>本文费这么多口水，来介绍 HTTPS 的“需求”和“难点”，为啥捏？因为只有当你了解这些，后面介绍 SSL/TLS 的实现原理时，你才能理解——当初为啥要把协议设计成这个样子。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Resource/">Resource</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/alipay.jpeg" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wechatpay.jpeg" alt="Wechat"></div>
+</a>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="wo157121900@me.com">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
+                
+                
+<a class="button is-danger donate" href="https://www.patreon.com/liuFengting" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/08/22/Resource/Resource-Little-Things/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Little Things</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/08/22/Resource/Resource-Server-Side-Swift/">
+                <span class="level-item">Server Side Swift</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                        <figure class="image is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.jpeg" alt="LiuFengting">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        LiuFengting
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        LiuFengting
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Wuxi, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Entradas
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        17
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categorias
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Etiquetas
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/liufengting" target="_blank">
+                SEGUIR</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/liufengting">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://www.facebook.com/liufengting">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/liufengting">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="https://dribbble.com/liufengting">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/liufengting" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">LiuFengting</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categorias
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Journal/">
+            <span class="level-start">
+                <span class="level-item">Journal</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Project/">
+            <span class="level-start">
+                <span class="level-item">Project</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Resource/">
+            <span class="level-start">
+                <span class="level-item">Resource</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Thoughts/">
+            <span class="level-start">
+                <span class="level-item">Thoughts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Nube de etiquetas
+        </h3>
+        <a href="/tags/Journal/" style="font-size: 13.33px;">Journal</a> <a href="/tags/Project/" style="font-size: 16.67px;">Project</a> <a href="/tags/Resource/" style="font-size: 20px;">Resource</a> <a href="/tags/Thoughts/" style="font-size: 10px;">Thoughts</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recientes
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/08/26/Journal/2018-08-03/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Journal 2018-08-03">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-26T15:18:09.921Z">2018-08-26</time></div>
+                    <a href="/2018/08/26/Journal/2018-08-03/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Journal 2018-08-03</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Journal/">Journal</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-iOS-Extension-Add-Property-Using-RunTime/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="iOS Extension Add Property Using RunTime">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-iOS-Extension-Add-Property-Using-RunTime/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS Extension Add Property Using RunTime</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-Useful-Blogs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Useful Blogs">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-Useful-Blogs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Useful Blogs</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Thoughts/Thoughts-Random-Thoughts/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Random thoughts">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Thoughts/Thoughts-Random-Thoughts/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Random thoughts</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Thoughts/">Thoughts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-Git-Methods/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="About Git">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.405Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-Git-Methods/" class="title has-link-black-ter is-size-6 has-text-weight-normal">About Git</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archivos
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Journal/">
+                        <span class="tag">Journal</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Project/">
+                        <span class="tag">Project</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Resource/">
+                        <span class="tag">Resource</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Thoughts/">
+                        <span class="tag">Thoughts</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recientes
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/08/26/Journal/2018-08-03/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Journal 2018-08-03">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-26T15:18:09.921Z">2018-08-26</time></div>
+                    <a href="/2018/08/26/Journal/2018-08-03/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Journal 2018-08-03</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Journal/">Journal</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-iOS-Extension-Add-Property-Using-RunTime/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="iOS Extension Add Property Using RunTime">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-iOS-Extension-Add-Property-Using-RunTime/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS Extension Add Property Using RunTime</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-Useful-Blogs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Useful Blogs">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-Useful-Blogs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Useful Blogs</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Thoughts/Thoughts-Random-Thoughts/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Random thoughts">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Thoughts/Thoughts-Random-Thoughts/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Random thoughts</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Thoughts/">Thoughts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-Git-Methods/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="About Git">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.405Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-Git-Methods/" class="title has-link-black-ter is-size-6 has-text-weight-normal">About Git</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archivos
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Journal/">
+                        <span class="tag">Journal</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Project/">
+                        <span class="tag">Project</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Resource/">
+                        <span class="tag">Resource</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Thoughts/">
+                        <span class="tag">Thoughts</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="HTTPS 和 SSL/TLS 协议" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 LiuFengting&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/liufengting">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("En");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

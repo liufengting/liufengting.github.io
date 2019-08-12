@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="En">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>About Git - LiuFengting</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="About Git安装Git Linux  $ sudo yum install git 或者 $ sudo apt-get install git  Mac  直接在Terminal执行git命令, 如果没有会提示安装方法.如果喜欢安装程序的话, 点这里 配置文件第一次安装, 千万别要忘了配置你的git的使用者名字和邮箱.  这个道理很简单, 每一次的提交时需要记录提交者的, 如果没有提交者,">
+<meta name="keywords" content="Resource">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About Git">
+<meta property="og:url" content="http://liufengting.github.io/2018/08/22/Resource/Resource-Git-Methods/index.html">
+<meta property="og:site_name" content="LiuFengting">
+<meta property="og:description" content="About Git安装Git Linux  $ sudo yum install git 或者 $ sudo apt-get install git  Mac  直接在Terminal执行git命令, 如果没有会提示安装方法.如果喜欢安装程序的话, 点这里 配置文件第一次安装, 千万别要忘了配置你的git的使用者名字和邮箱.  这个道理很简单, 每一次的提交时需要记录提交者的, 如果没有提交者,">
+<meta property="og:locale" content="En">
+<meta property="og:image" content="http://liufengting.github.io/gallery/bg_bridge.jpg">
+<meta property="og:updated_time" content="2019-08-12T08:24:06.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About Git">
+<meta name="twitter:description" content="About Git安装Git Linux  $ sudo yum install git 或者 $ sudo apt-get install git  Mac  直接在Terminal执行git命令, 如果没有会提示安装方法.如果喜欢安装程序的话, 点这里 配置文件第一次安装, 千万别要忘了配置你的git的使用者名字和邮箱.  这个道理很简单, 每一次的提交时需要记录提交者的, 如果没有提交者,">
+<meta name="twitter:image" content="http://liufengting.github.io/gallery/bg_bridge.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="About Git" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/liufengting">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="About Git">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-08-22T09:01:32.405Z">2018-08-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    34 minutes read (About 5145 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                About Git
+            
+        </h1>
+        <div class="content">
+            <h1 id="About-Git"><a href="#About-Git" class="headerlink" title="About Git"></a>About <code>Git</code></h1><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><ul>
+<li>Linux</li>
+</ul>
+<p><code>$ sudo yum install git</code></p>
+<p>或者</p>
+<p><code>$ sudo apt-get install git</code></p>
+<ul>
+<li>Mac</li>
+</ul>
+<p>直接在<code>Terminal</code>执行<code>git</code>命令, 如果没有会提示安装方法.<br>如果喜欢安装程序的话, <a href="http://git-scm.com/download/mac" target="_blank" rel="noopener">点这里</a></p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>第一次安装, 千万别要忘了配置你的git的使用者名字和邮箱.  这个道理很简单, 每一次的提交时需要记录提交者的, 如果没有提交者, 那么bug出现找谁来背锅??</p>
+<a id="more"></a>
+
+<h3 id="查看config"><a href="#查看config" class="headerlink" title="查看config"></a>查看config</h3><p>Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。</p>
+<p><strong><code>/etc/gitconfig</code> 文件: 包含系统上每一个用户及他们仓库的通用配置。</strong></p>
+<p><code>$ git config --system --list</code></p>
+<p><strong><code>~/.gitconfig</code> 或 <code>~/.config/git/config</code> 文件：只针对当前用户。</strong></p>
+<p><code>$ git config --global --list</code></p>
+<p>当前使用仓库的 Git 目录中的 config 文件（就是 <code>.git/config</code>）：针对该仓库。</p>
+<p>每一个级别覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。</p>
+<p><strong>当然, 也可以查看某一项配置信息.</strong></p>
+<ul>
+<li>形式:<code>git config [--global|--system] &lt;key&gt;</code></li>
+</ul>
+<p><em>查看最终的配置属性值</em><br><code>$ git config user.name</code>  </p>
+<p><em>查看当前系统的属性值</em><br><code>$ git config --global user.name</code>   </p>
+<h3 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h3><p><code>$ git config --global user.name &quot;name&quot;</code></p>
+<p><code>$ git config --global user.email xxx@163.com</code></p>
+<p>使用<code>--global</code>选项, 当以后在该系统上做的任何操作都会使用此属性. 如果你需要在某一个特定的项目使用其他名字和邮箱, 那么可以通过设置<strong>项目中的config文件</strong>, 这样config中的属性会覆盖掉<strong>global的全局属性</strong>, 并且当在其他项目中并不会造成影响. 使用方式只需要去掉<code>--global</code>参数即可修改项目中的<code>.git/config</code>文件</p>
+<p><code>$ git config user.name &quot;name&quot;</code></p>
+<p><strong>获取帮助手册</strong></p>
+<p>形式: <code>git help &lt;verb&gt;</code> 或者 <code>git &lt;verb&gt; --help</code></p>
+<p>比如查看config手册</p>
+<p><code>$ git help config</code></p>
+<h3 id="Git别名"><a href="#Git别名" class="headerlink" title="Git别名"></a>Git别名</h3><p>例如: 生成别名之后可以在日后用简短的表示来使用</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global alias.br branch</span><br><span class="line">$ git config --global alias.ci commit</span><br><span class="line">$ git config --global alias.st status</span><br></pre></td></tr></table></figure>
+
+<h3 id="gitignore文件"><a href="#gitignore文件" class="headerlink" title=".gitignore文件"></a>.gitignore文件</h3><p>对于自动生成的文件, 日志, 编译的临时文件等. 可以对其进行配置, 让git不追踪这些文件</p>
+<p>规范如下:</p>
+<ul>
+<li>所有空行或者以 ＃ 开头的行都会被 Git 忽略。</li>
+<li>可以使用标准的 glob 模式匹配。</li>
+<li>匹配模式可以以（/）开头防止递归。</li>
+<li>匹配模式可以以（/）结尾指定目录。</li>
+<li>要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反</li>
+</ul>
+<p><code>glob模式</code>是指shell所使用的简化了的正则表达式.</p>
+<ul>
+<li><code>*</code> :匹配零个或多个任意字符</li>
+<li><code>[abc]</code> :只匹配括号内的任意一个字符</li>
+<li><code>[0-9]</code> :使用短划线表示范围, 可以匹配0到9之间的任何字符.</li>
+<li><code>?</code> :匹配任意一个字符</li>
+<li><code>**</code>:匹配任意的中间目录,例如<code>a/**/z</code>可以匹配<code>a/z</code>,<code>a/b/z</code>,<code>a/b/c/z</code>等</li>
+</ul>
+<p>如下给出一个样板:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 忽略所有以 .c结尾的文件</span><br><span class="line">*.c</span><br><span class="line"></span><br><span class="line"># 但是 stream.c 会被git追踪</span><br><span class="line">!stream.c</span><br><span class="line"></span><br><span class="line"># 只忽略当前文件夹下的TODO文件, 不包括其他文件夹下的TODO例如: subdir/TODO</span><br><span class="line">/TODO</span><br><span class="line"></span><br><span class="line"># 忽略所有在build文件夹下的文件</span><br><span class="line">build/</span><br><span class="line"></span><br><span class="line"># 忽略 doc/notes.txt, 但不包括多层下.txt例如: doc/server/arch.txt</span><br><span class="line">doc/*.txt</span><br><span class="line"></span><br><span class="line"># 忽略所有在doc目录下的.pdf文件</span><br><span class="line">doc/**/*.pdf</span><br></pre></td></tr></table></figure>
+
+<h2 id="仓库的基础操作"><a href="#仓库的基础操作" class="headerlink" title="仓库的基础操作"></a>仓库的基础操作</h2><h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加文件到暂存区"><a href="#添加文件到暂存区" class="headerlink" title="添加文件到暂存区"></a>添加文件到暂存区</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 添加全部暂存区和历史区不存在的或者有更改的 `.c`结尾的文件</span><br><span class="line">$ git add *.c</span><br><span class="line"></span><br><span class="line"># 添加全部暂存区和历史区不存在的或者有更改的文件</span><br><span class="line">$ git add .  </span><br><span class="line"></span><br><span class="line"># 指定文件添加</span><br><span class="line">$ git add test.c</span><br></pre></td></tr></table></figure>
+
+<h3 id="status仓库"><a href="#status仓库" class="headerlink" title="status仓库"></a>status仓库</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"></span><br><span class="line"># 如果需要显示一种紧凑式格式</span><br><span class="line">$ git status --short      # 等价于 $ git status -s</span><br></pre></td></tr></table></figure>
+
+<p>紧凑式中字母的表示含义如下:</p>
+<ul>
+<li><code>??</code> :表示新添加的未追踪的文件</li>
+<li><code>M</code> :M出现在右边,表示该文件被修改但是还没有放入暂存区</li>
+<li><code>M</code> :M出现在左边,表示文件被修改已经放入了暂存区</li>
+<li><code>MM</code> :出现两个,代表此文件在工作区修改已经放入了暂存区, 但之后有进行了修改,没有添加到暂存区</li>
+</ul>
+<h3 id="diff仓库"><a href="#diff仓库" class="headerlink" title="diff仓库"></a>diff仓库</h3><p>如果你想知道文件具体修改的内容, 那么<code>diff</code>会很有用</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看以追踪但尚未暂存的文件更新了哪些部分, 不添加额外参数</span><br><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line"># 对使用了add添加到了暂存区的内容, 使用--staged参数或者--cached</span><br><span class="line">$ git diff --staged</span><br></pre></td></tr></table></figure>
+
+<h3 id="提交更新"><a href="#提交更新" class="headerlink" title="提交更新"></a>提交更新</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 常规做法</span><br><span class="line">$ git commit -m &quot;commit message&quot;</span><br><span class="line"></span><br><span class="line"># 如果不使用-m参数添加提交信息, git会使用默认的编译器如vi进行提交描述编写.</span><br><span class="line"># 可通过$ git config --global core.edit 设定喜欢的编译器</span><br><span class="line"></span><br><span class="line"># 跳过暂存区操作, 直接从工作区提交到历史区</span><br><span class="line">$ git commit -a -m &quot;&quot;          #等价于: $ git commit -am &quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h3><p>如果在工作区间对一个文件进行删除, 需要先进行<code>add</code>,然后才可以提交. 使用<code>git rm</code>可以直接在工作区间删除文件, 并提交到暂存区.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git rm fileName</span><br><span class="line"></span><br><span class="line"># 如果文件修改,并添加了暂存区, 需要使用-f参数来强制删除(force)</span><br><span class="line">$ git rm -f fileName</span><br><span class="line"></span><br><span class="line"># 可以使用glob模式,如下</span><br><span class="line">$ git rm log/\*.log         # 删除log目录下所有名称是.log结尾文件</span><br><span class="line">$ git rm \*~                # 删除以~结尾的所有文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h3><p>同样使用<code>git rm</code>会方便很多, 并且如果相对文件重命名也可以如此</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git mv file_from file_to</span><br></pre></td></tr></table></figure>
+
+<p>当执行了这条语句之后, 只需要在下一次<code>commit</code>即可, 不需要考虑额外操作. 等价于如下:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mv file_from file_to</span><br><span class="line">$ git rm file_from</span><br><span class="line">$ git rm file_to</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看历史提交"><a href="#查看历史提交" class="headerlink" title="查看历史提交"></a>查看历史提交</h3><p>如果是最基本的<code>git log</code>, 那么会按提交时间列出所有更新, 包括提交的SHA-1校验和, 作者名称,邮箱,提交时间,提交说明. 下面说说常用选项.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># -p:仅显示最近x次的提交  格式 $ git log -p -x</span><br><span class="line">$ git log -p -2             # 查看最近的两次提交内容</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># --stat:简略的显示每次提交的内容更改, 如哪些文件变更,多少删除,多少添加等</span><br><span class="line">$ git log --stat</span><br><span class="line"></span><br><span class="line"># --pretty: 指定默认不同格式展示信息</span><br><span class="line">$ git log --pretty=oneline              #每次提交用一行显示</span><br><span class="line"></span><br><span class="line">$ git log --pretty=format:&quot;%h - %an, %ar : %s&quot;  </span><br><span class="line"># 效果:1a99c42 - 苏, 19 hours ago : 无意义提交</span><br></pre></td></tr></table></figure>
+
+<p><strong>关于<code>format</code>对应的常用占位符的写法和意义</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%H</td>
+<td>提交对象（commit）的完整哈希字串</td>
+</tr>
+<tr>
+<td>%h</td>
+<td>提交对象的简短哈希字串</td>
+</tr>
+<tr>
+<td>%T</td>
+<td>树对象（tree）的完整哈希字串</td>
+</tr>
+<tr>
+<td>%t</td>
+<td>树对象的简短哈希字串</td>
+</tr>
+<tr>
+<td>%P</td>
+<td>父对象（parent）的完整哈希字串</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>父对象的简短哈希字串</td>
+</tr>
+<tr>
+<td>%an</td>
+<td>作者（author）的名字</td>
+</tr>
+<tr>
+<td>%ae</td>
+<td>作者的电子邮件地址</td>
+</tr>
+<tr>
+<td>%ad</td>
+<td>作者修订日期（可以用 –date= 选项定制格式）</td>
+</tr>
+<tr>
+<td>%ar</td>
+<td>作者修订日期，按多久以前的方式显示</td>
+</tr>
+<tr>
+<td>%cn</td>
+<td>提交者(committer)的名字</td>
+</tr>
+<tr>
+<td>%ce</td>
+<td>提交者的电子邮件地址</td>
+</tr>
+<tr>
+<td>%cd</td>
+<td>提交日期</td>
+</tr>
+<tr>
+<td>%cr</td>
+<td>提交日期，按多久以前的方式显示</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>提交说明</td>
+</tr>
+</tbody></table>
+<p><strong>图形展示分支的合并历史</strong></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log --graph --oneline   #oneline只是让输出看起来比较舒服</span><br></pre></td></tr></table></figure>
+
+<p><strong>git log的一些其他操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p</td>
+<td>按补丁格式显示每个更新之间的差异。</td>
+</tr>
+<tr>
+<td>–stat</td>
+<td>显示每次更新的文件修改统计信息。</td>
+</tr>
+<tr>
+<td>–shortstat</td>
+<td>只显示 –stat 中最后的行数修改添加移除统计。</td>
+</tr>
+<tr>
+<td>–name-only</td>
+<td>仅在提交信息后显示已修改的文件清单。</td>
+</tr>
+<tr>
+<td>–name-status</td>
+<td>显示新增、修改、删除的文件清单。</td>
+</tr>
+<tr>
+<td>–abbrev-commit</td>
+<td>仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。</td>
+</tr>
+<tr>
+<td>–relative-date</td>
+<td>使用较短的相对时间显示（比如，“2 weeks ago”）。</td>
+</tr>
+<tr>
+<td>–graph</td>
+<td>显示 ASCII 图形表示的分支合并历史。</td>
+</tr>
+<tr>
+<td>–pretty</td>
+<td>使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。</td>
+</tr>
+</tbody></table>
+<p><strong>查找一个字符串的出现和删除的提交</strong></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 使用限制符-S后面紧跟要查询的字符串</span><br><span class="line">$ git log -Smethod_name</span><br><span class="line"></span><br><span class="line"># 或者针对一个文件进行更改的提交查询, 只需要在后面追加文件名称即可</span><br><span class="line">$ git log fileName</span><br></pre></td></tr></table></figure>
+
+<p>哈哈,即使如果你不小心写个隐藏bug不管几个月之后,如果老大要想找出问题是写引发的其实很简单.例如这样<br><code>$ git log -p fileName</code> 想甩锅?算了吧,还是认错以后多注意吧.</p>
+<p><strong>还有一些限制log输出的选项</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-(n)</td>
+<td>仅显示最近的 n 条提交</td>
+</tr>
+<tr>
+<td>–since, –after</td>
+<td>仅显示指定时间之后的提交。</td>
+</tr>
+<tr>
+<td>–until, –before</td>
+<td>仅显示指定时间之前的提交。</td>
+</tr>
+<tr>
+<td>–author</td>
+<td>仅显示指定作者相关的提交。</td>
+</tr>
+<tr>
+<td>–committer</td>
+<td>仅显示指定提交者相关的提交。</td>
+</tr>
+<tr>
+<td>–grep</td>
+<td>仅显示含指定关键字的提交</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>仅显示添加或移除了某个关键字的提交</td>
+</tr>
+</tbody></table>
+<p>一个实际的例子，如果要查看 Git 仓库中，2016 年 11 月1号到7号，作者叫苏的提交文件，可以用下面的查询命令：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=&quot;%h - %s&quot; --author=苏 --since=&quot;2016-11-01&quot; \</span><br><span class="line">   --before=&quot;2016-11-07&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h3><p><strong>amend重新提交</strong></p>
+<p>当我们<code>commit</code>之后突然发现漏掉了一个文件, 这个时候不可能对一个文件再进行<code>commit</code>一次, 这样做就显得很多余, 而如果版本回退之前再添加也比较麻烦. 这个时候就可以使用这个<code>amend</code>命令.如下:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;版本1.5开发代码&quot;</span><br><span class="line"></span><br><span class="line"># 正当你松了一口气的时候发现配置文件忘记修改了, 你赶紧修改,并适合用add到暂存区</span><br><span class="line">$ git add project.property</span><br><span class="line">$ git commit --amend         </span><br><span class="line"># 你会神奇的发现你没有增加任何多余的操作就把漏掉的文件补齐到最后一次提交中</span><br></pre></td></tr></table></figure>
+
+<p><strong>取消暂存的文件</strong></p>
+<p>就是对文件进行了<code>git add</code>操作. 这个时候可以<code>reset</code></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 让暂存区的文件变成文件修改但是没有添加暂存区的状态</span><br><span class="line">$ git reset HEAD fileName</span><br></pre></td></tr></table></figure>
+
+<p><strong>撤销对文件的修改</strong></p>
+<p>场景: 当文件修改了, 但是还没有进行<code>git add</code>的时候还只是在工作区间, 还原成最后一次提交的内容</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -- filename</span><br></pre></td></tr></table></figure>
+
+<p>要注意使用, 使用之前确定是否要抛弃已经添加的内容. 因为这个动作可能让你最新添加的内容彻底丢失. 因为没有进行<code>commit</code>, 一般来说进行了<code>commit</code>的内容都是可以恢复的.</p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><blockquote>
+<p>Git可以给历史中的某一个提交打上标签, 以示重要. 比如每次正式版本的上线等.</p>
+</blockquote>
+<p><strong>列出标签</strong></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git tag</span><br><span class="line"></span><br><span class="line"># 如果你只关心某一部分的标签, 例如只对v2.x的标签感兴趣,你可以这样做</span><br><span class="line">$ git tag -l &apos;v2.*&apos;</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建标签</strong></p>
+<p>标签分为两种一种是<code>附加标签</code>另一种是<code>轻量标签</code>.</p>
+<ul>
+<li>附加标签: 会保存打标签者的信息, 时间和附加信息. 最后更随打标签的提交</li>
+<li>轻量标签: 只是在一个提交上做一个标记. 存储在一个专门保存标签的文件,指向提交的hash值</li>
+</ul>
+<p>先来看附加标签:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -a v1.0 -m &apos;附加信息&apos;</span><br></pre></td></tr></table></figure>
+
+<p>轻量标签</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag v1.0</span><br></pre></td></tr></table></figure>
+
+<p>后期打标签, 就是对已经提交某次提交进行追加标签设置</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 可以先使用git log --oneline获取提交历史的hash值</span><br><span class="line">$ git log --oneline</span><br><span class="line"></span><br><span class="line"># 然后把hash值赋值到标签语句之后</span><br><span class="line">$ git tag -a v1.1 a6b4c97</span><br></pre></td></tr></table></figure>
+
+<p><strong>共享标签</strong></p>
+<p>默认情况下, <code>git push</code>不会把标签传递到远程服务器. 需要显示的推送标签共享到服务器<br>例如: <code>git push origin [tagname]</code></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin v1.4</span><br><span class="line"></span><br><span class="line"># 如果想把本地上所有在远程服务器上的不存在标签删除掉,可以这样</span><br><span class="line">$ git push origin --tags</span><br></pre></td></tr></table></figure>
+
+<p><strong>检出标签</strong></p>
+<p>git中不能真正的检出一个标签, 但是可以在标签处创建一个新的分支.如下</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b checkbranch2 v2.0</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看标签对应的信息</strong></p>
+<p>使用<code>git show &lt;标签名&gt;</code>可以查看对应标签的详细信息, 如果<code>git show</code>这样的命令只是显示上次提交的内容</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git show v1.4</span><br></pre></td></tr></table></figure>
+
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><h3 id="分支的创建"><a href="#分支的创建" class="headerlink" title="分支的创建"></a>分支的创建</h3><p>分支的创建, 其实本质就是创建一个可以移动的指针,这个指针名就是新的分支名</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git branch dev</span><br><span class="line"></span><br><span class="line"># 上面的只是创建了一个分支. 并没有切换, 可以使用一条命令创建并且换到新分支</span><br><span class="line">$ git checkout -b dev</span><br><span class="line"></span><br><span class="line"># 可以通过`git log`命令查看各个分支所指向的对象</span><br><span class="line">$ git log --oneline --decorate</span><br><span class="line"></span><br><span class="line"># 如果你想查看图形式的分叉历史,可以这样:</span><br><span class="line">$ git log --oneline --decorate --graph --all</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支的切换"><a href="#分支的切换" class="headerlink" title="分支的切换"></a>分支的切换</h3><p>所谓的分支切换就是<code>HEAD</code>指针的指向的改变</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><p>利用<code>git merge &lt;要合并到的目标分支&gt;</code>, 这条命令会把当前所在分支与目标分支的内容合并, 可以这样理解, 如果当你试图向目标分支合并时, 如果当前分支可以顺着一个分支走下去, 那么本质上其实只是当前指针的向前移动, 由于这种情况下的合并并没有需要解决的分期, 所以git会称这个是<code>fast-forward</code>快速前进.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><p>当一个功能分支开发完毕之后, 并进行了合并, 通常这个分支也就被删除,以保证仓库中的干净.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 删除dev分支</span><br><span class="line">$ git branch -d dev</span><br><span class="line"></span><br><span class="line"># 如果dev分支还有未提交的内容,为了保证你的数据安全git默认是不允许删除,可以使用`-D`强制删除</span><br><span class="line">$ git branch -D dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p><code>git branch</code>命令不只是可以创建于删除分支. 如果不添加任何参数, 那么会得到所有分支的一个列表</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git branch        # 其中一个分支前面的*代表,目前检出的分支就是HEAD指针所指向的分支</span><br><span class="line"></span><br><span class="line"># 追加-v参数 可以展示每一个分支最后一次提交</span><br><span class="line">$ git branch -v</span><br><span class="line"></span><br><span class="line"># --merged:查看那些分支已经合并到当前分支</span><br><span class="line">$ git branch --merged        # 一般这个列表展示的除了*号的其他分支, 都可以删除</span><br><span class="line"></span><br><span class="line"># --no-merged:查看所有包含未合并工作的分支</span><br><span class="line">$ git branch --no-merged</span><br></pre></td></tr></table></figure>
+
+<h3 id="变基"><a href="#变基" class="headerlink" title="变基"></a>变基</h3><blockquote>
+<p>和合并<code>merge</code>相似的效果都是合并分支, 但是使用变基<code>rebase</code>可以让提交历史变得更简洁. 如下</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/suzeyu1992/repo/master/project/git/rebase_1.png" alt><br><img src="https://raw.githubusercontent.com/suzeyu1992/repo/master/project/git/rebase_2.png" alt></p>
+<p>图片1是<code>merge</code>合并效果, 图片2是<code>rebase</code>合并效果. 明显变基会让提交历史看起来更加干净. 使用如下:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># rebase &lt;目标分支名&gt; [需要移动变基底的分支]</span><br><span class="line">$ git rebase master experiment</span><br><span class="line"></span><br><span class="line"># 此时目标分支后面会追加另一个分支的提交. 此时只需要切换到master分支,合并分支即可.</span><br><span class="line">$ git checkout master</span><br><span class="line">$ git merge experiment</span><br></pre></td></tr></table></figure>
+
+<p><code>rebase</code>原理就是, 从目标分支和要变基的分支向上查找出共同祖先节点就是<code>c2</code>, 然后把要变基的分支到<code>c2</code>节点的所有提交,提取出相应的修改生成一个副本, 并追加到目标分创建相对应的提交. 此时变基的分支指向<code>目标分支master</code>的后面某一次提交. 此时只要使用修改<code>master</code>指向指针使用<code>merge</code>即可.</p>
+<h3 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 获得远程的仓库列表</span><br><span class="line">$ git ls-remote origin</span><br><span class="line"></span><br><span class="line"># 如果想获得更多的信息</span><br><span class="line">$ git remote show origin</span><br><span class="line"></span><br><span class="line"># 查看远程分支和本地分支</span><br><span class="line">$ git branch -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>拉取远程分支</strong></p>
+<p>假设远程如果有一个<code>dev</code>分支, 你使用<code>fetch</code>进行抓取. 这个时候, 本地不会自动生成一个可编辑的副本, 换句话说就是这种情况下, 不会有一个新的<code>dev</code>本地分支, 只有一个不可以修改的<code>origin/dev</code>指针. 这个时候可以运行<code>git merge origin/dev</code>命令, 将这些远程dev分支的工作合并到当前分支. 如果想要在自己本地的dev分支上工作, 可以将其建立在远程分支之上.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev origin/dev</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建远程分支</strong></p>
+<p>如果你的本地有一个新建的<code>dev</code>分支, 并且你进行了提交, 此时你想把这个分支也提交到远程的<code>dev</code>分支, 但是远程还没有创建<code>dev</code>, 这个时候可以使用如下命令: <code>git push &lt;远程仓库名&gt; &lt;要推送的本地分支&gt;</code></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin dev</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除远程分支</strong></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 删除远程dev分支</span><br><span class="line">$ git push origin --delete dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="跟踪分支"><a href="#跟踪分支" class="headerlink" title="跟踪分支"></a>跟踪分支</h3><p>从一个远程跟踪分支检出一个本地分支会自动创建一个叫做 <code>跟踪分支</code>（有时候也叫做 “上游分支”）。 跟踪分支是与远程分支有直接关系的本地分支。 如果在一个跟踪分支上输入<code>git pull</code>，<code>Git</code> 能自动地识别去哪个服务器上抓取、合并到哪个分支。</p>
+<p>当克隆一个仓库时，它通常会自动地创建一个跟踪 <code>origin/master</code> 的 <code>master</code> 分支。 然而，如果你愿意的话可以设置其他的跟踪分支 - 其他远程仓库上的跟踪分支，或者不跟踪 <code>master</code> 分支。 最简单的就是之前看到的例子，运行 <code>git checkout -b [branch] [remotename]/[branch]</code>。 这是一个十分常用的操作所以 Git 提供了 <code>--track</code> 快捷方式：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout --track origin/dev</span><br><span class="line"></span><br><span class="line"># 如果想要自定义本地分支名字</span><br><span class="line">$ git checkout -b 任意分支名字 origin/dev</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置已有的本地分支跟踪一个刚刚拉取下来的远程分支</strong>，或者想要修改正在跟踪的上游分支，你可以在任意时间使用 -u 或 –set-upstream-to 选项运行 git branch 来显式地设置。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 设置HEAD指向的分支的上游为远程dev分支</span><br><span class="line">$ git branch -u origin/dev</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看设置的所有跟踪分支</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -vv</span><br></pre></td></tr></table></figure>
+
+<h2 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h2><h3 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git clone &lt;url&gt;</span><br><span class="line"></span><br><span class="line"># 如果你想创建自己的仓库名, 就是本地根文件夹的名称, 那么可以如下追加名称</span><br><span class="line">$ git clone &lt;url&gt; [dirName]</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 默认查看远程仓库的方式</span><br><span class="line">$ git remote</span><br><span class="line"></span><br><span class="line"># 查看远程仓库的读写权限. 如果可以看到(push)说明提交的推送</span><br><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
+
+<p>如果需要查看某一个仓库更多的信息时, 使用<code>git remote show ...</code></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote show origin</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 格式: git remote add [shortName] &lt;url&gt;  同时可以指定一个仓库的引用名称,例如</span><br><span class="line">$ git remote add rp git@github.com:suzeyu1992/GitOperateDemo.git</span><br><span class="line"></span><br><span class="line"># 此时你想对新加的远程进行拉取动作, 只需要使用之前的引用名称就可以</span><br><span class="line">$ git fetch rp</span><br></pre></td></tr></table></figure>
+
+<h3 id="远程仓库的拉取推送"><a href="#远程仓库的拉取推送" class="headerlink" title="远程仓库的拉取推送"></a>远程仓库的拉取推送</h3><p><strong>拉取</strong></p>
+<p>大家常用的可能是<code>git pull</code>这个指令. 这个指令的通常会从服务器上抓取数据自动尝试合并到当前所在分支.</p>
+<p>而我们可以也可以利用<code>git fetch</code>进行本地分支所追踪的远程分支没有提交. 然后我们可以手动的进行合并.</p>
+<p><strong>推送</strong></p>
+<p><code>git push [remote-name] [branch-name]</code> 例如:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+
+<p>只有当对服务器有写入权限, 并且之前没有人提交, 这条命令才会生效.</p>
+<p>上面的这两个推送也好拉取也好. 如果所在分支设置了远程服务器分支的追踪, 那么可以省略掉后面的仓库名和分支名. 如果没有设置那么必须显示的指定.</p>
+<h3 id="远程仓库移除重命名"><a href="#远程仓库移除重命名" class="headerlink" title="远程仓库移除重命名"></a>远程仓库移除重命名</h3><p>对远程仓库的名称进行修改</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote rename oldName newName</span><br></pre></td></tr></table></figure>
+
+<p>想要移除一个远程仓库,例如服务器搬走了,不再使用一个特定镜像,或者一个贡献者不再贡献</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote rm 仓库名</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Resource/">Resource</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/alipay.jpeg" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wechatpay.jpeg" alt="Wechat"></div>
+</a>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="wo157121900@me.com">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
+                
+                
+<a class="button is-danger donate" href="https://www.patreon.com/liuFengting" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/08/22/Thoughts/Thoughts-Random-Thoughts/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Random thoughts</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/08/22/Resource/Resource-Little-Things/">
+                <span class="level-item">Little Things</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                        <figure class="image is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.jpeg" alt="LiuFengting">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        LiuFengting
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        LiuFengting
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Wuxi, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Entradas
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        17
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categorias
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Etiquetas
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/liufengting" target="_blank">
+                SEGUIR</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/liufengting">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://www.facebook.com/liufengting">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/liufengting">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="https://dribbble.com/liufengting">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/liufengting" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">LiuFengting</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categorias
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Journal/">
+            <span class="level-start">
+                <span class="level-item">Journal</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Project/">
+            <span class="level-start">
+                <span class="level-item">Project</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Resource/">
+            <span class="level-start">
+                <span class="level-item">Resource</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Thoughts/">
+            <span class="level-start">
+                <span class="level-item">Thoughts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Nube de etiquetas
+        </h3>
+        <a href="/tags/Journal/" style="font-size: 13.33px;">Journal</a> <a href="/tags/Project/" style="font-size: 16.67px;">Project</a> <a href="/tags/Resource/" style="font-size: 20px;">Resource</a> <a href="/tags/Thoughts/" style="font-size: 10px;">Thoughts</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recientes
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/08/26/Journal/2018-08-03/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Journal 2018-08-03">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-26T15:18:09.921Z">2018-08-26</time></div>
+                    <a href="/2018/08/26/Journal/2018-08-03/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Journal 2018-08-03</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Journal/">Journal</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-iOS-Extension-Add-Property-Using-RunTime/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="iOS Extension Add Property Using RunTime">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-iOS-Extension-Add-Property-Using-RunTime/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS Extension Add Property Using RunTime</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-Useful-Blogs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Useful Blogs">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-Useful-Blogs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Useful Blogs</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Thoughts/Thoughts-Random-Thoughts/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Random thoughts">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Thoughts/Thoughts-Random-Thoughts/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Random thoughts</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Thoughts/">Thoughts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-Git-Methods/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="About Git">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.405Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-Git-Methods/" class="title has-link-black-ter is-size-6 has-text-weight-normal">About Git</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archivos
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Journal/">
+                        <span class="tag">Journal</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Project/">
+                        <span class="tag">Project</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Resource/">
+                        <span class="tag">Resource</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Thoughts/">
+                        <span class="tag">Thoughts</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recientes
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/08/26/Journal/2018-08-03/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Journal 2018-08-03">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-26T15:18:09.921Z">2018-08-26</time></div>
+                    <a href="/2018/08/26/Journal/2018-08-03/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Journal 2018-08-03</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Journal/">Journal</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-iOS-Extension-Add-Property-Using-RunTime/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="iOS Extension Add Property Using RunTime">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-iOS-Extension-Add-Property-Using-RunTime/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS Extension Add Property Using RunTime</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-Useful-Blogs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Useful Blogs">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-Useful-Blogs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Useful Blogs</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Thoughts/Thoughts-Random-Thoughts/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="Random thoughts">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.406Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Thoughts/Thoughts-Random-Thoughts/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Random thoughts</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Thoughts/">Thoughts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/22/Resource/Resource-Git-Methods/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bg_bridge.jpg" alt="About Git">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-22T09:01:32.405Z">2018-08-22</time></div>
+                    <a href="/2018/08/22/Resource/Resource-Git-Methods/" class="title has-link-black-ter is-size-6 has-text-weight-normal">About Git</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Resource/">Resource</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archivos
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Journal/">
+                        <span class="tag">Journal</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Project/">
+                        <span class="tag">Project</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Resource/">
+                        <span class="tag">Resource</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Thoughts/">
+                        <span class="tag">Thoughts</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="About Git" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 LiuFengting&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/liufengting">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("En");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
