@@ -1,0 +1,25 @@
+I"<<p>Hey，我是黄玄（a.k.a. Hux, <em>@huxpro</em>），一个略懂计算机科学与艺术的斜杆不动青年，自诩是一个<a href="https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E4%BC%A0%E5%AA%92%E5%A4%A7%E5%AD%A6">广院</a>数字媒体艺术系与 RIT 计算机科学系（师从 <a href="https://www.cs.rit.edu/~mtf/">Prof. Matthew Fluet</a> 专攻编程语言）杂交出来的<a href="https://book.douban.com/subject/6021440/">黑客与画家</a>。</p>
+
+<p>现为 <del>Facebook</del> Meta 签约软件工程师，就职于开源技术<del>网红</del>团队 <a href="https://beta.reactjs.org/community/meet-the-team#react-core">React</a>，曾参与 <a href="https://hermesengine.dev/">Hermes JavaScript 引擎</a>，<a href="https://reasonml.github.io/">ReasonML</a> (现 <a href="https://rescript-lang.org/">ReScript</a>)，以及 <a href="https://tech.fb.com/ar-vr/">Reality Labs</a> 某保密项目等。在国内期间，曾被招募为阿里巴巴 · <a href="http://alitrip.com">阿里旅行（飞猪）</a>· 前端工程师、微影时代 · 微票儿 · 前端基础设施工程团队负责人、<a href="https://ele.me/">饿了么</a> · 大前端团队 · <a href="https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509">PWA 顾问</a> 等。</p>
+
+<p>目前的物理活动范围主要在美帝纽约与硅谷，也想当个数字游<del>民</del>侠。虚拟分身日常出没于<a href="https://weibo.com/huxpro">微博</a>、<a href="https://www.zhihu.com/people/huxpro/pins/posts">知乎</a>、<a href="https://space.bilibili.com/43271611">B站</a>、<a href="https://www.instagram.com/huxpro/">Instagram</a>、<a href="https://twitter.com/Huxpro/">推特</a>、<a href="https://github.com/huxpro">Github</a> 等。</p>
+
+<h5 id="演讲与分享">演讲与分享</h5>
+
+<ul>
+  <li><a href="https://reactjs.org/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022.html">React Labs: What We’ve Been Working On – June 2022</a> · React Blog</li>
+  <li><a href="https://youtu.be/lGEMwh32soc">React Without Memo</a> · <a href="https://conf.reactjs.org/">React Conf 2021</a></li>
+  <li><a href="https://youtu.be/lGEMwh32soc">Toward Hermes being the Default</a> · React Native Blog · 2021</li>
+  <li>React Native 0.64 with Hermes for iOS · <a href="https://www.callstack.com/podcast-react-native-show">The RN Show Podcast Ep #5</a> · 2021</li>
+  <li><a href="//huangxuan.me/jsconfcn2017/">Upgrading to Progressive Web Apps</a> · <a href="http://2017.jsconf.cn/">JSConf CN 上海 2017</a></li>
+  <li>Building Progressive Web Apps · <a href="http://www.csdisummit.com/">CSDI 广州 2017</a></li>
+  <li>The State of Progressive Web App · GDG IO Redux 北京 2017</li>
+  <li>炒冷饭 · PWA 到底是个什么玩意？· Baidu HQ 北京 2017</li>
+  <li><a href="//huangxuan.me/2016/11/20/sw-101-gdgdf/">Service Worker 101</a> · GDG DevFest 北京 2016</li>
+  <li><a href="//huangxuan.me/2016/10/20/pwa-qcon2016/">Progressive Web App，复兴序章</a> · <a href="http://2016.qconshanghai.com/presentation/3111">QCon 上海 2016</a></li>
+  <li>Progressive Web App 之我见 · GDG IO Redux 北京 2016</li>
+  <li><a href="//huangxuan.me/2015/12/28/css-sucks-2015/">CSS Still Sucks 2015</a> · 2015</li>
+  <li><a href="//huangxuan.me/2015/07/09/js-module-7day/">JavaScript 模块化七日谈</a> · 2015</li>
+</ul>
+
+:ET
