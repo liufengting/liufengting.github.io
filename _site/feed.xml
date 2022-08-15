@@ -3,10 +3,10 @@
   <channel>
     <title>LiuFengting Blog</title>
     <description>LiuFengting&apos; blog. not yet finished</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 15 Aug 2022 23:39:56 +0800</pubDate>
-    <lastBuildDate>Mon, 15 Aug 2022 23:39:56 +0800</lastBuildDate>
+    <link>https://liufengting.cn/</link>
+    <atom:link href="https://liufengting.cn/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 16 Aug 2022 00:00:47 +0800</pubDate>
+    <lastBuildDate>Tue, 16 Aug 2022 00:00:47 +0800</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -18,8 +18,8 @@
 &lt;p&gt;暂时不写。&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 Aug 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/08/15/rewrite-blogs/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/08/15/rewrite-blogs/</guid>
+        <link>https://liufengting.cn/2022/08/15/rewrite-blogs/</link>
+        <guid isPermaLink="true">https://liufengting.cn/2022/08/15/rewrite-blogs/</guid>
         
         <category>iOS</category>
         
